@@ -1,0 +1,16 @@
+.example-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    margin: auto;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  
+  button {
+    margin-top: 20px;
+  }
+  

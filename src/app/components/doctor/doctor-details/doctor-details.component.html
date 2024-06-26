@@ -1,0 +1,11 @@
+<h3>Doctor Card</h3>
+<mat-card class="doctor-card">
+  <!-- Card content goes here -->
+  <mat-card-header>
+    <mat-card-title>Doctor name - {{ doctorSpec.doctor.user.firstName }}</mat-card-title>
+    <mat-card-subtitle>{{ doctorSpec.specialization.specializationName }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{ doctorSpec.doctor.bio }}</p>
+  </mat-card-content>
+</mat-card>

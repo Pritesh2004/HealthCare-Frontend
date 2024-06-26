@@ -1,0 +1,9 @@
+<h2>Doctors</h2>
+<mat-carousel>
+    <mat-carousel-slide  >
+        <mat-card *ngFor="let doctorSpec of doctorSpecs" class="doctor-carousel-card">
+            <app-doctor-details [doctorSpec]="doctorSpec"></app-doctor-details>
+          </mat-card>
+    </mat-carousel-slide>
+    
+</mat-carousel>

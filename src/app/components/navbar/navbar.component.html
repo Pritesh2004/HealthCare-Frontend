@@ -1,0 +1,34 @@
+<mat-toolbar >
+    <mat-toolbar-row id="navbar">
+        
+      <span class="navbar-title">HealthCare</span>
+  
+      <!-- Links for both logged in and not logged in users -->
+      
+        <button mat-button routerLink="/">Home</button>
+        <button mat-button routerLink="/about">About</button>
+        <button mat-button routerLink="/contact">Contact</button>
+        <button mat-button routerLink="/doctors">Doctors</button>
+        <button mat-button routerLink="/userDashboard">Appointment</button>
+    
+  
+      <!-- Logged-in user specific links -->
+      <ng-container *ngIf="isLoggedIn">
+        <button mat-button  [matMenuTriggerFor]="userMenu">Account</button>
+      </ng-container>
+      
+      <!-- Menu for normal user -->
+      <mat-menu #userMenu="matMenu">
+        <button mat-menu-item *ngIf="isNormalUser" routerLink="/userProfile">Profile</button>
+        <button mat-menu-item *ngIf="isDoctor" routerLink="/doctorProfile">Profile</button>
+        <button mat-menu-item *ngIf="isAdmin" routerLink="/adminProfile">Profile</button>
+        <button mat-menu-item *ngIf="isNormalUser" routerLink="/userAppointments">My Appointments</button>
+        <button mat-menu-item *ngIf="isAdmin" routerLink="/addDoctor">Add Doctor</button>
+        <button mat-menu-item *ngIf="isAdmin" routerLink="/addSpecialization">Add Specializations</button>
+        <button mat-menu-item *ngIf="isDoctor" routerLink="/doctorAppointments">My Appointments</button>
+        <button mat-menu-item (click)="logout()">Logout</button>
+      </mat-menu>
+ 
+    </mat-toolbar-row>
+  </mat-toolbar>
+  

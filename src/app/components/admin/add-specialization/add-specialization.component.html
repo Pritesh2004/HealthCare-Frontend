@@ -1,0 +1,10 @@
+<form class="example-form" (ngSubmit)="addSpec()">
+    <mat-form-field class="example-full-width">
+      <mat-label>Specialization Name</mat-label>
+      <input matInput placeholder="Enter specialization name" [(ngModel)]="specializationName" name="specializationName" required>
+      <!-- Add any validation messages or indicators here -->
+    </mat-form-field>
+  
+    <button type="submit" mat-raised-button color="primary">Add Specialization</button>
+  </form>
+  
