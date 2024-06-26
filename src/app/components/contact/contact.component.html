@@ -1,0 +1,25 @@
+<form #queryForm="ngForm" (ngSubmit)="postQuery()">
+    <mat-form-field>
+        <mat-label>Enter your email</mat-label>
+        <input
+        #email="ngModel"
+        [(ngModel)]="query.email"
+        name="email"
+        matInput placeholder="pat@example.com"  required>
+        <mat-error *ngIf="email.errors?.['required']">Email is required</mat-error>
+
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Message</mat-label>
+        <textarea
+        #queries="ngModel"
+        [(ngModel)]="query.queries"
+        name="queries"
+        required
+        matInput></textarea>
+        <mat-error *ngIf="queries.errors?.['required']">Message is required</mat-error>
+
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+</form>

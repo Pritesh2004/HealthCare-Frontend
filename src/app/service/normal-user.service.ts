@@ -17,6 +17,11 @@ export class NormalUserService {
     return this.http.post(`${this.baseUrl}/user/`, user);
   }
 
+  postQueries(query: any): Observable<any> {
+    const headers = new HttpHeaders().set('Authorization', 'Bearer ' + this.loginService.getToken());
+    return this.http.post(`${this.baseUrl}/user/query`, query, {headers});
+  }
+
   getUser(userId:any): Observable<any> {
     const url = `${this.baseUrl}/user/getUser/${userId}`;
     const headers = new HttpHeaders().set('Authorization', 'Bearer ' + this.loginService.getToken());

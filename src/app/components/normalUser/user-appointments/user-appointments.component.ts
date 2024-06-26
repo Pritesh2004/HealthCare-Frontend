@@ -40,4 +40,18 @@ export class UserAppointmentsComponent implements OnInit {
       }
     );
   }
+
+  updateStatus(appointmentId:any, status: any): void {
+    this.appointmentService.updateStatus(appointmentId, status).subscribe(
+      (data) => {
+        console.log('Appointment Status update:', data);
+        window.location.reload();
+        // Perform any additional actions upon success
+      },
+      (error) => {
+        console.error('Error updating appointment:', error);
+        // Handle error scenarios
+      }
+    );
+  }
 }

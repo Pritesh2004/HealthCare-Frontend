@@ -33,17 +33,12 @@ export class AppointmentService {
   }
 
 
-  acceptAppointmentStatus(appointmentId: any): Observable<any> {
-    const url = `${this.baseUrl}/acceptStatus/${appointmentId}`;
+  updateStatus(appointmentId: any, status:any): Observable<any> {
+    const url = `${this.baseUrl}/updateStatus/${appointmentId}`;
     const headers = new HttpHeaders().set('Authorization', 'Bearer ' + this.loginService.getToken());
-    return this.http.put<any>(url, {},{headers});
+    return this.http.put<any>(url, {status},{headers});
   }
 
-  rejectAppointmentStatus(appointmentId: any): Observable<any> {
-    const url = `${this.baseUrl}/rejectStatus/${appointmentId}`;
-    const headers = new HttpHeaders().set('Authorization', 'Bearer ' + this.loginService.getToken());
-    return this.http.put<any>(url,{}, {headers});
-  }
-
+ 
 
 }

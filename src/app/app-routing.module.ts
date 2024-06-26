@@ -16,6 +16,7 @@ import { DoctorAppointmentsComponent } from './components/doctor/doctor-appointm
 import { UserProfileComponent } from './components/normalUser/user-profile/user-profile.component';
 import { DoctorProfileComponent } from './components/doctor/doctor-profile/doctor-profile.component';
 import { AdminProfileComponent } from './components/admin/admin-profile/admin-profile.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 const routes: Routes = [
 
@@ -47,6 +48,11 @@ const routes: Routes = [
     path : 'userProfile',
     component: UserProfileComponent,
     canActivate : [NormalUserGuard]
+  },
+  {
+    path: 'contactUs',
+    component : ContactComponent,
+    canActivate: [NormalUserGuard]
   },
   {
     path : 'doctorProfile',

@@ -38,6 +38,7 @@ import { MatCarouselModule } from 'ng-mat-carousel';
 import { UserProfileComponent } from './components/normalUser/user-profile/user-profile.component';
 import { AdminProfileComponent } from './components/admin/admin-profile/admin-profile.component';
 import { DoctorProfileComponent } from './components/doctor/doctor-profile/doctor-profile.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 
 @NgModule({
@@ -59,7 +60,8 @@ import { DoctorProfileComponent } from './components/doctor/doctor-profile/docto
     DoctorDetailsComponent,
     UserProfileComponent,
     AdminProfileComponent,
-    DoctorProfileComponent
+    DoctorProfileComponent,
+    ContactComponent
   ],
   imports: [
     MatSelectModule,

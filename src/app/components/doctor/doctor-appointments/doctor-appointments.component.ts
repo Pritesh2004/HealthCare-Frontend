@@ -42,33 +42,20 @@ export class DoctorAppointmentsComponent {
     );
   }
 
-  acceptAppointment(appointmentId:any): void {
-    this.appointmentService.acceptAppointmentStatus(appointmentId).subscribe(
+  updateStatus(appointmentId:any, status: any): void {
+    this.appointmentService.updateStatus(appointmentId, status).subscribe(
       (data) => {
-        console.log('Appointment accepted:', data);
+        console.log('Appointment Status update:', data);
         window.location.reload();
         // Perform any additional actions upon success
       },
       (error) => {
-        console.error('Error accepting appointment:', error);
+        console.error('Error updating appointment:', error);
         // Handle error scenarios
       }
     );
   }
 
-  rejectAppointment(appointmentId:any): void {
-    this.appointmentService.rejectAppointmentStatus(appointmentId).subscribe(
-      (data) => {
-        
-        console.log('Appointment rejected:' ,data);
-        window.location.reload();
 
-        // Perform any additional actions upon success
-      },
-      (error) => {
-        console.error('Error rejecting appointment:', error);
-        // Handle error scenarios
-      }
-    );
-  }
+  
 }
