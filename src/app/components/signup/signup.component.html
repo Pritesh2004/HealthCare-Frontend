@@ -1,7 +1,7 @@
 <div class="signup-page">
-    <div class="signup-container">
+    <div *ngIf="!otpSent" class="signup-container">
       <p id="signup">SIGNUP</p>
-      <form class="signup-form" #signupForm="ngForm" (ngSubmit)="signupUser()">
+      <form class="signup-form" #signupForm="ngForm" (submit)="sendOTP(user.email)">
         
         <!-- Username Field -->
         <div class="input-div">
@@ -136,5 +136,12 @@
         </div>
       </form>
     </div>
-  </div>
+    <div  *ngIf="otpSent">
+      <form class="otp-div" #otpForm="ngForm" (submit)="verifyOtp(formOtp.fOtp)">
+        <p  id="otp-heading">OTP Authentication</p>
+        <input id="otp-input" type="text"  [(ngModel)]="formOtp.fOtp" #fOtp="ngModel" name="fOtp" required placeholder="Enter OTP">
+        <button id="otp-btn" type="submit">Verify OTP</button>
   
+      </form>
+    </div>
+  </div>

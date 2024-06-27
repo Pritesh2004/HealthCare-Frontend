@@ -16,7 +16,7 @@ export class DoctorService {
 
 
   getDoctor(userId:any): Observable<any> {
-    const url = `${this.baseUrl}/getDoctor/${userId}`;
+    const url = `${this.baseUrl}/getDoctorById/${userId}`;
     const headers = new HttpHeaders().set('Authorization', 'Bearer ' + this.loginService.getToken());
     return this.http.get<any>(url, {headers});
   }
@@ -28,14 +28,14 @@ export class DoctorService {
   }
 
   getAllDoctorSpec(): Observable<any> {
-    const url = `${this.baseUrl}/getAllDocSpec`;
+    const url = `${this.baseUrl}/getAllSpecializations`;
     const headers = new HttpHeaders().set('Authorization', 'Bearer ' + this.loginService.getToken());
     return this.http.get<any>(url, {headers});
   }
 
 
   getDoctorSpecializationByDoctorId(doctorId: number): Observable<any> {
-    const url = `${this.baseUrl}/getSpecByDocId/${doctorId}`;
+    const url = `${this.baseUrl}/getSpecializationByDoctorId/${doctorId}`;
     const headers = new HttpHeaders().set('Authorization', 'Bearer ' + this.loginService.getToken());
 
     return this.http.get<any>(url, {headers});

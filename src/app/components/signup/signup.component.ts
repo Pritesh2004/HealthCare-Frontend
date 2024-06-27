@@ -11,7 +11,6 @@ import { NormalUserService } from 'src/app/service/normal-user.service';
 export class SignupComponent {
 
 
-
   user = {
     username: '',
     firstName: '',
@@ -23,15 +22,48 @@ export class SignupComponent {
     gender:'',
     dateOfBirth:new Date(),
     };
-
-
+    
+  formOtp = {
+    fOtp: ''
+  };
+  
+  otp: string = '';
+  otpSent: boolean = false;
 
   constructor(private userService: NormalUserService, private router: Router, private snack: MatSnackBar) {}
 
   ngOnInit(): void {
-  
+    this.generateOTP();
   }
 
+  generateOTP(): void {
+    const digits = '0123456789';
+    this.otp = '';
+    for (let i = 0; i < 6; i++) {
+      this.otp += digits[Math.floor(Math.random() * 10)];
+    }
+  }
+  
+  sendOTP(email: string): void {
+    this.userService.sendOTP(email, this.otp).subscribe(
+      response => {
+        this.snack.open('Check your mail for OTP', 'OK', { verticalPosition: 'top' });
+        this.otpSent = true;
+      },
+      error => {
+        console.error('Error sending OTP:', error);
+        this.snack.open('Error sending OTP. Please try again later.', 'OK', { verticalPosition: 'top' });
+      }
+    );
+  }
+
+  verifyOtp(formOtp: string): void {
+    if (formOtp === this.otp) {
+      this.signupUser();
+    } else {
+      this.snack.open('Wrong OTP entered', 'OK', { verticalPosition: 'top' });
+    }
+  }
 
   signupUser(): void {
     this.userService.registerUser(this.user).subscribe(
