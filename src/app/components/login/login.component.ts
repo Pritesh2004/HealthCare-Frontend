@@ -11,7 +11,7 @@ import { LoginService } from 'src/app/service/login.service';
 export class LoginComponent {
 
   userRequest = {
-    username: '',
+    email: '',
     password: ''
   };
 

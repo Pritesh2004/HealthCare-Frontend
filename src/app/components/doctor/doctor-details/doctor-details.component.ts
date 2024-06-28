@@ -9,11 +9,8 @@ import { DoctorSpecialization } from '../../models/doctorSpecialization.model';
 })
 export class DoctorDetailsComponent implements OnInit{
 
-  @Input()
-  doctorSpec!: DoctorSpecialization;
 
   ngOnInit(): void {
-      console.log(this.doctorSpec);
   }
   constructor(){}
 

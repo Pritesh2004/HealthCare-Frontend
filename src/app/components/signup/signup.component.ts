@@ -12,15 +12,10 @@ export class SignupComponent {
 
 
   user = {
-    username: '',
     firstName: '',
     lastName:'',
-    phoneNumber:'',
     email: '',
     password: '',
-    address:'',
-    gender:'',
-    dateOfBirth:new Date(),
     };
     
   formOtp = {

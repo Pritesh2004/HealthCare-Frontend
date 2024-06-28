@@ -34,11 +34,11 @@ import { DoctorAppointmentsComponent } from './components/doctor/doctor-appointm
 import { UserAppointmentsComponent } from './components/normalUser/user-appointments/user-appointments.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { DoctorDetailsComponent } from './components/doctor/doctor-details/doctor-details.component';
-import { MatCarouselModule } from 'ng-mat-carousel';
 import { UserProfileComponent } from './components/normalUser/user-profile/user-profile.component';
 import { AdminProfileComponent } from './components/admin/admin-profile/admin-profile.component';
 import { DoctorProfileComponent } from './components/doctor/doctor-profile/doctor-profile.component';
 import { ContactComponent } from './components/contact/contact.component';
+import {  NgxUiLoaderHttpModule, NgxUiLoaderModule } from "ngx-ui-loader";
 
 
 @NgModule({
@@ -67,10 +67,12 @@ import { ContactComponent } from './components/contact/contact.component';
     MatSelectModule,
     MatSidenavModule,
     MatMenuModule,
-    MatCarouselModule,
-
     HttpClientModule,
+    NgxUiLoaderModule,
     MatIconModule,
+    NgxUiLoaderHttpModule.forRoot({
+      showForeground:true
+    }),
     MatProgressSpinnerModule,
     FormsModule,
     MatInputModule,

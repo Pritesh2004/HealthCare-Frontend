@@ -15,6 +15,11 @@ export class NavbarComponent implements OnInit{
   user = null;
   userRole = "";
 
+  menuVariable:boolean=false;
+
+  openMenu(){
+    this.menuVariable =! this.menuVariable;
+  }
 
   constructor(private loginService : LoginService, private router : Router) {
   }

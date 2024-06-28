@@ -3,13 +3,13 @@
 <div class="login-page">
     <div class="login-container">
   
-      <h2 id="login">LOGIN</h2>
+      <h2 id="login">Login</h2>
       <form #loginForm="ngForm" (submit)="loginUser()">
         <div class="input-div">
           <div class="input-divs">
-            <input type="text" id="username" [(ngModel)]="userRequest.username" #username="ngModel" name="username" required placeholder="Username">
-            <span *ngIf="username.invalid && username.touched" style="color: red;">
-              <span *ngIf="username.errors?.['required']">Username is required.</span>
+            <input type="text" id="email" [(ngModel)]="userRequest.email" #email="ngModel" name="email" required placeholder="Email">
+            <span *ngIf="email.invalid && email.touched" style="color: red;">
+              <span *ngIf="email.errors?.['required']">Email is required.</span>
             </span>
           </div>
         

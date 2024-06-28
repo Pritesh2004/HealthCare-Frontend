@@ -1,34 +1,43 @@
-<mat-toolbar >
-    <mat-toolbar-row id="navbar">
-        
-      <span class="navbar-title">HealthCare</span>
-  
-      <!-- Links for both logged in and not logged in users -->
-      
-        <button mat-button routerLink="/">Home</button>
-        <button mat-button routerLink="/about">About</button>
-        <button mat-button routerLink="/contactUs">Contact</button>
-        <button mat-button routerLink="/doctors">Doctors</button>
-        <button mat-button routerLink="/userDashboard">Appointment</button>
-    
-  
-      <!-- Logged-in user specific links -->
+<nav id="navbar">
+
+  <span class="navbar-title">
+    <p id="title1">Health</p>
+    <p id="title2">Care</p>
+  </span>
+
+  <div class="navlinks" [class.menuClass]="menuVariable">
+
+    <div id="links">
+      <a class="navlink" routerLink="/">Home</a>
+      <a class="navlink" routerLink="/about">About</a>
+      <a class="navlink" routerLink="/doctors">Doctors</a>
+      <a class="navlink" routerLink="/contactUs">Contact</a>
+    </div>
+
+    <div id="buttons">
+      <button id="btn1" routerLink="/userDashboard">Make an Appointment</button>
       <ng-container *ngIf="isLoggedIn">
-        <button mat-button  [matMenuTriggerFor]="userMenu">Account</button>
+        <button id="btn2" [matMenuTriggerFor]="userMenu">Account</button>
       </ng-container>
-      
-      <!-- Menu for normal user -->
-      <mat-menu #userMenu="matMenu">
-        <button mat-menu-item *ngIf="isNormalUser" routerLink="/userProfile">Profile</button>
-        <button mat-menu-item *ngIf="isDoctor" routerLink="/doctorProfile">Profile</button>
-        <button mat-menu-item *ngIf="isAdmin" routerLink="/adminProfile">Profile</button>
-        <button mat-menu-item *ngIf="isNormalUser" routerLink="/userAppointments">My Appointments</button>
-        <button mat-menu-item *ngIf="isAdmin" routerLink="/addDoctor">Add Doctor</button>
-        <button mat-menu-item *ngIf="isAdmin" routerLink="/addSpecialization">Add Specializations</button>
-        <button mat-menu-item *ngIf="isDoctor" routerLink="/doctorAppointments">My Appointments</button>
-        <button mat-menu-item (click)="logout()">Logout</button>
-      </mat-menu>
- 
-    </mat-toolbar-row>
-  </mat-toolbar>
-  
+    </div>
+
+  </div>
+
+  <button (click)="openMenu()" id="menu-btn" mat-icon-button class="example-icon"
+    aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+</nav>
+
+<!-- Menu for normal user -->
+<mat-menu id="matMenu" #userMenu="matMenu">
+  <button mat-menu-item *ngIf="isNormalUser" routerLink="/userProfile">Profile</button>
+  <button mat-menu-item *ngIf="isDoctor" routerLink="/doctorProfile">Profile</button>
+  <button mat-menu-item *ngIf="isAdmin" routerLink="/adminProfile">Profile</button>
+  <button mat-menu-item *ngIf="isNormalUser" routerLink="/userAppointments">My Appointments</button>
+  <button mat-menu-item *ngIf="isAdmin" routerLink="/addDoctor">Add Doctor</button>
+  <button mat-menu-item *ngIf="isAdmin" routerLink="/addSpecialization">Add Specializations</button>
+  <button mat-menu-item *ngIf="isDoctor" routerLink="/doctorAppointments">My Appointments</button>
+  <button mat-menu-item (click)="logout()">Logout</button>
+</mat-menu>
