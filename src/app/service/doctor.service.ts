@@ -28,7 +28,7 @@ export class DoctorService {
   }
 
   getAllDoctorSpec(): Observable<any> {
-    const url = `${this.baseUrl}/getAllSpecializations`;
+    const url = `${this.baseUrl}/getAllDoctorSpecializations`;
     const headers = new HttpHeaders().set('Authorization', 'Bearer ' + this.loginService.getToken());
     return this.http.get<any>(url, {headers});
   }

@@ -5,7 +5,7 @@ body { margin: 0; font-family: sans-serif;
     line-height: 1.15; }
 .pageTitle{
     background-image: url("https://themewagon.github.io/medicalcenter/assets/img/hero/hero2.png");
-    height: 65vh;
+    height: 70vh;
     padding-top: 12vh;
     display: flex;
     flex-direction: row;
@@ -21,9 +21,23 @@ body { margin: 0; font-family: sans-serif;
     line-height: 1.2;
 }
 
+@media (max-width: 1000px) {
+    .pageTitle{
+        height: 40vh;
+    }
+}
+
+@media (max-width: 700px) {
+    .pageTitle{
+        height: 28vh;
+    }
+    .pageTitle p{
+        font-size: 30px;
+
+    }
+}
+
 .flexColumn{
     display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
 }

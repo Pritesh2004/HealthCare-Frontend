@@ -1,6 +1,6 @@
 /* user-login.component.css */
 .login-page {
-    background-color: aliceblue;
+  background-image: url("https://themewagon.github.io/medicalcenter/assets/img/hero/hero2.png");
     height:88vh;
     padding-top: 12vh;
     display: flex;
