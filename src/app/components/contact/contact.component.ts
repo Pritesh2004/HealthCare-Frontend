@@ -12,7 +12,9 @@ export class ContactComponent {
 
   public query={
     email : '',
-    queries:''
+    queries:'',
+    name: '',
+    subject: ''
   }
   postQuery(){
     this.userService.postQueries(this.query).subscribe(

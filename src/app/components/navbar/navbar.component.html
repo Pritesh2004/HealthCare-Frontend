@@ -11,7 +11,7 @@
       <a class="navlink" routerLink="/">Home</a>
       <a class="navlink" routerLink="/about">About</a>
       <a class="navlink" routerLink="/doctors">Doctors</a>
-      <a class="navlink" routerLink="/contactUs">Contact</a>
+      <a class="navlink" routerLink="/contact">Contact</a>
     </div>
 
     <div id="buttons">
@@ -30,7 +30,6 @@
 
 </nav>
 
-<!-- Menu for normal user -->
 <mat-menu id="matMenu" #userMenu="matMenu">
   <button mat-menu-item *ngIf="isNormalUser" routerLink="/userProfile">Profile</button>
   <button mat-menu-item *ngIf="isDoctor" routerLink="/doctorProfile">Profile</button>

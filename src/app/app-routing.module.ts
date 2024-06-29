@@ -17,6 +17,8 @@ import { UserProfileComponent } from './components/normalUser/user-profile/user-
 import { DoctorProfileComponent } from './components/doctor/doctor-profile/doctor-profile.component';
 import { AdminProfileComponent } from './components/admin/admin-profile/admin-profile.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { DoctorDetailsComponent } from './components/doctor/doctor-details/doctor-details.component';
+import { AboutComponent } from './components/about/about.component';
 
 const routes: Routes = [
 
@@ -49,11 +51,7 @@ const routes: Routes = [
     component: UserProfileComponent,
     canActivate : [NormalUserGuard]
   },
-  {
-    path: 'contactUs',
-    component : ContactComponent,
-    canActivate: [NormalUserGuard]
-  },
+
   {
     path : 'doctorProfile',
     component: DoctorProfileComponent,
@@ -90,6 +88,19 @@ const routes: Routes = [
     component : DoctorDashboardComponent,
     canActivate : [DoctorGuard]
   },
+  {
+    path : 'doctors',
+    component : DoctorDetailsComponent
+  },
+  {
+    path: 'about',
+    component : AboutComponent
+  },
+  {
+    path: 'contact',
+    component : ContactComponent,
+  }
+
   
 ];
 

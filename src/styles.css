@@ -1,4 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: sans-serif;
+    line-height: 1.15; }
+.pageTitle{
+    background-image: url("https://themewagon.github.io/medicalcenter/assets/img/hero/hero2.png");
+    height: 65vh;
+    padding-top: 12vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.pageTitle p{
+    font-size: 50px;
+    font-weight: 900;
+    margin-bottom: 6px;
+    color: #102039;
+    line-height: 1.2;
+}
+
+.flexColumn{
+    display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}

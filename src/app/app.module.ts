@@ -39,6 +39,7 @@ import { AdminProfileComponent } from './components/admin/admin-profile/admin-pr
 import { DoctorProfileComponent } from './components/doctor/doctor-profile/doctor-profile.component';
 import { ContactComponent } from './components/contact/contact.component';
 import {  NgxUiLoaderHttpModule, NgxUiLoaderModule } from "ngx-ui-loader";
+import { AboutComponent } from './components/about/about.component';
 
 
 @NgModule({
@@ -61,7 +62,8 @@ import {  NgxUiLoaderHttpModule, NgxUiLoaderModule } from "ngx-ui-loader";
     UserProfileComponent,
     AdminProfileComponent,
     DoctorProfileComponent,
-    ContactComponent
+    ContactComponent,
+    AboutComponent
   ],
   imports: [
     MatSelectModule,
