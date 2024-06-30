@@ -40,10 +40,12 @@ export class AddDoctorComponent {
     .subscribe(
       response => {
         console.log('Saved Doctor:', response);
+        alert("Doctor Saved Successfully")
         // Handle success, e.g., show success message
       },
       error => {
         console.error('Error saving doctor:', error);
+        alert("Error saving doctor");
         // Handle error, e.g., show error message
       }
     );

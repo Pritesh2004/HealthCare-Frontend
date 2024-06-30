@@ -62,6 +62,9 @@ export class NavbarComponent implements OnInit{
   }
 
   logout(): void {
+    this.isNormalUser = false; // Check user type
+    this.isAdmin = false; // Check user type
+    this.isDoctor = false;
     this.loginService.logout();
     this.loginService.loginStatusSubject.next(false);
     

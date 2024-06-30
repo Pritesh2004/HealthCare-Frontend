@@ -1,69 +1,57 @@
-<!-- register-form.component.html -->
+<div class="content">
 
-<form class="register-form mat-elevation-z2" (ngSubmit)="addDoctor()">
-    <mat-form-field class="full-width">
-        <mat-label>Username</mat-label>
-        <input matInput placeholder="Enter username" [(ngModel)]="doctor.username" name="username" required>
-    </mat-form-field>
+    <form class="register-form" (ngSubmit)="addDoctor()">
+        <h2>Add Doctor</h2>
+        <div class="form-row">
+           
+            <input type="password" id="password" placeholder="Enter password" [(ngModel)]="doctor.password"
+                name="password" required>
 
-    <mat-form-field class="full-width">
-        <mat-label>Password</mat-label>
-        <input matInput type="password" placeholder="Enter password" [(ngModel)]="doctor.password" name="password"
-            required>
-    </mat-form-field>
+            <input type="email" id="email" placeholder="Enter email" [(ngModel)]="doctor.email" name="email" required>
+              <input type="text" id="licenseNumber" placeholder="Enter License number" [(ngModel)]="doctor.licenseNumber"
+                name="licenseNumber">
+        </div>
 
-    <mat-form-field class="full-width">
-        <mat-label>Email</mat-label>
-        <input matInput type="email" placeholder="Enter email" [(ngModel)]="doctor.email" name="email" required>
-    </mat-form-field>
+        <div class="form-row">
 
-    <mat-form-field class="full-width">
-        <mat-label>First Name</mat-label>
-        <input matInput placeholder="Enter first name" [(ngModel)]="doctor.firstName" name="firstName" required>
-    </mat-form-field>
+            <input type="text" id="firstName" placeholder="Enter first name" [(ngModel)]="doctor.firstName"
+                name="firstName" required>
 
-    <mat-form-field class="full-width">
-        <mat-label>Last Name</mat-label>
-        <input matInput placeholder="Enter last name" [(ngModel)]="doctor.lastName" name="lastName" required>
-    </mat-form-field>
 
-    <mat-form-field class="full-width">
-        <mat-label>Phone Number</mat-label>
-        <input matInput placeholder="Enter phone number" [(ngModel)]="doctor.phoneNumber" name="phoneNumber">
-    </mat-form-field>
+            <input type="text" id="lastName" placeholder="Enter last name" [(ngModel)]="doctor.lastName" name="lastName"
+                required>
 
-    <mat-form-field class="full-width">
-        <mat-label>License Number</mat-label>
-        <input matInput placeholder="Enter License number" [(ngModel)]="doctor.licenseNumber" name="licenseNumber">
-    </mat-form-field>
 
-    <mat-form-field class="full-width">
-        <mat-label>Clinic Address</mat-label>
-        <input matInput placeholder="Enter clinicAddress" [(ngModel)]="doctor.clinicAddress" name="clinicAddress">
-    </mat-form-field>
+            <input type="text" id="phoneNumber" placeholder="Enter phone number" [(ngModel)]="doctor.phoneNumber"
+                name="phoneNumber">
+        </div>
 
-    <mat-form-field class="full-width">
-        <mat-label>Bio</mat-label>
-        <input matInput placeholder="Enter Bio" [(ngModel)]="doctor.bio" name="bio">
-    </mat-form-field>
+        <div class="form-row">
 
-    <mat-form-field class="full-width">
-        <mat-label>Experience</mat-label>
-        <input matInput placeholder="Enter years of Experience" [(ngModel)]="doctor.yearsOfExperience"
-            name="yearsOfExperience">
-    </mat-form-field>
+          
 
-    <mat-form-field class="full-width">
-        <mat-label>Specialization</mat-label>
-        <mat-select id="specializationId" name="specializationId" [(ngModel)]="doctor.specializationId" required>
-          <mat-option *ngFor="let specialization of specializations" [value]="specialization.specializationId">
-            {{ specialization.specializationName }} <!-- Display the name or appropriate field of the specialization -->
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-      
 
-    <!-- Add additional fields as per your requirements -->
+            <input type="text" id="clinicAddress" placeholder="Enter clinic address" [(ngModel)]="doctor.clinicAddress"
+                name="clinicAddress">
 
-    <button mat-raised-button color="primary" type="submit" class="submit-button" >Register</button>
-</form>
+
+            <input type="text" id="bio" placeholder="Enter bio" [(ngModel)]="doctor.bio" name="bio">
+        </div>
+
+        <div class="form-row">
+
+            <input type="text" id="yearsOfExperience" placeholder="Enter years of experience"
+                [(ngModel)]="doctor.yearsOfExperience" name="yearsOfExperience">
+
+
+            <select id="specializationId" name="specializationId" [(ngModel)]="doctor.specializationId" required>
+                <option *ngFor="let specialization of specializations" [value]="specialization.specializationId">
+                    {{ specialization.specializationName }}
+                </option>
+            </select>
+        </div>
+
+        <button type="submit" class="submit-button">Register</button>
+    </form>
+
+</div>

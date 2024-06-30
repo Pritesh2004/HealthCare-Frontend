@@ -8,7 +8,7 @@ import { DoctorService } from 'src/app/service/doctor.service';
 })
 export class DoctorProfileComponent {
 
-  doctor :any;
+  doctorSpec :any;
   userId:any;
   constructor(private doctorService : DoctorService){}
 
@@ -21,12 +21,12 @@ export class DoctorProfileComponent {
     } else {
       console.error('User data not found in localStorage.');
     }
-    this.getAdminDetails();
+    this.getDoctorSpec();
   }
-  getAdminDetails(): void {
-    this.doctorService.getDoctor(this.userId).subscribe(
+  getDoctorSpec(): void {
+    this.doctorService.getDoctorSpecializationByDoctorId(this.userId).subscribe(
       (data) => {
-        this.doctor = data;
+        this.doctorSpec = data;
       },
       (error) => {
         console.error('Error fetching user details:', error);

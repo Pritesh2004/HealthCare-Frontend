@@ -13,7 +13,7 @@ export class DoctorAppointmentsComponent {
 
   appointments: Appointment[] = [];
   doctorId = 0;
-  displayedColumns: string[] = ['userName', 'doctorName', 'appointmentDate', 'appointmentTime', 'bookingDate', 'reason', 'status'];
+  displayedColumns: string[] = ['userName', 'userEmail', 'appointmentDate', 'appointmentTime', 'bookingDate', 'reason', 'status'];
   dataSource = new MatTableDataSource<Appointment>();
 
   constructor(private appointmentService: AppointmentService) { }
@@ -46,11 +46,14 @@ export class DoctorAppointmentsComponent {
     this.appointmentService.updateStatus(appointmentId, status).subscribe(
       (data) => {
         console.log('Appointment Status update:', data);
+        
         window.location.reload();
+        alert("Status updated")
         // Perform any additional actions upon success
       },
       (error) => {
         console.error('Error updating appointment:', error);
+        alert("Error updating appointment");
         // Handle error scenarios
       }
     );

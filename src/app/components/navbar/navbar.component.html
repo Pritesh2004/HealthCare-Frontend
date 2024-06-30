@@ -7,7 +7,7 @@
 
   <div class="navlinks" [class.menuClass]="menuVariable">
 
-    <div id="links">
+    <div *ngIf="!isAdmin && !isDoctor" id="links">
       <a class="navlink" routerLink="/">Home</a>
       <a class="navlink" routerLink="/about">About</a>
       <a class="navlink" routerLink="/doctors">Doctors</a>
@@ -15,7 +15,7 @@
     </div>
 
     <div id="buttons">
-      <button id="btn1" routerLink="/userDashboard">Book Appointment</button>
+      <button *ngIf="!isAdmin && !isDoctor" id="btn1" routerLink="/userDashboard">Book Appointment</button>
       <ng-container *ngIf="isLoggedIn">
         <button id="btn2" [matMenuTriggerFor]="userMenu">Account</button>
       </ng-container>
