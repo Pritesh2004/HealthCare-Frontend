@@ -35,6 +35,12 @@ export class NormalUserService {
     const headers = new HttpHeaders().set('Authorization', 'Bearer ' + this.loginService.getToken());
     return this.http.get<any>(url, {headers});
   }
+
+  updateUser(email: string, user: any): Observable<any> {
+    const url = `${this.baseUrl}/user/updateUser/${email}`;
+    const headers = new HttpHeaders().set('Authorization', 'Bearer ' + this.loginService.getToken());
+    return this.http.put(url, user, {headers});
+  }
 }
 
 

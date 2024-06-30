@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AppointmentService } from 'src/app/service/appointment.service';
 import { DoctorService } from 'src/app/service/doctor.service';
 
@@ -21,7 +22,7 @@ export class UserDashboardComponent implements OnInit {
   }
 
 
-  constructor(private doctorService: DoctorService, private appointmentService: AppointmentService) { }
+  constructor(private router : Router,private doctorService: DoctorService, private appointmentService: AppointmentService) { }
 
   ngOnInit(): void {
     this.getAllDoctorSpec();
@@ -62,6 +63,8 @@ export class UserDashboardComponent implements OnInit {
       data => {
         console.log(data);
         alert("Appointment booked successfullt");
+        this.router.navigate(['/userAppointments']);
+
       },
       error => {
         console.log(error);
