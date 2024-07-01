@@ -143,6 +143,31 @@ margin-left: 10px;
   border-radius: 4px;
 }
 
+.otp-buttons{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 10px;
+}
+
+#try-btn{
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  background-color: white; /* Theme color for the button */
+  color: #0ea2ff;
+  border: 1px solid #0ea2ff;
+  margin-top: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#try-btn:hover{
+  background-color: #0ea2ff;
+  color: white;
+}
+
 #otp-btn {
   width: 100%;
   padding: 10px 0;

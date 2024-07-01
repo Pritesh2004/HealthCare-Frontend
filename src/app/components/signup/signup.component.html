@@ -82,7 +82,11 @@
     <form class="otp-div" #otpForm="ngForm" (submit)="verifyOtp(formOtp.fOtp)">
       <p id="otp-heading">OTP Authentication</p>
       <input id="otp-input" type="text" [(ngModel)]="formOtp.fOtp" #fOtp="ngModel" name="fOtp" required placeholder="Enter OTP">
-      <button id="otp-btn" type="submit">Verify OTP</button>
+      <div class="otp-buttons">
+        <button id="otp-btn" type="submit">Verify OTP</button>
+      <button id="try-btn" (click)="toSignup()">Try again</button>
+      </div>
+      
     </form>
   </mat-card>
   </div>

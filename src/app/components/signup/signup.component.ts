@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { NormalUserService } from 'src/app/service/normal-user.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-signup',
@@ -29,6 +30,10 @@ export class SignupComponent {
 
   ngOnInit(): void {
     this.generateOTP();
+  }
+
+  toSignup(){
+    this.otpSent = !this.otpSent;
   }
 
   generateOTP(): void {
@@ -64,10 +69,17 @@ export class SignupComponent {
     this.userService.registerUser(this.user).subscribe(
       response => {
         console.log('User registered successfully:', response);
-        this.snack.open('Registration successfull','ok',{
-          verticalPosition:'top'
-        });
-        this.router.navigate(['login'])
+        Swal.fire({
+          title: "User registered successfully",
+          text: "We are excited to welcome you to our HealthCare System",
+          icon: "success",
+          confirmButtonText: 'OK',
+      }).then((result) => {
+          if (result.isConfirmed) {
+            this.router.navigate(['login'])
+          }
+      });
+        
 
         // Add any additional handling or redirection logic here
       },

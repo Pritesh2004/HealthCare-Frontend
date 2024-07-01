@@ -1,6 +1,14 @@
 <nav id="navbar">
 
-  <span class="navbar-title">
+  <span *ngIf="!isAdmin && !isDoctor" routerLink="/" class="navbar-title">
+    <p id="title1">Health</p>
+    <p id="title2">Care</p>
+  </span>
+  <span  *ngIf="isDoctor" routerLink="/doctorDashboard"  class="navbar-title">
+    <p id="title1">Health</p>
+    <p id="title2">Care</p>
+  </span>
+  <span *ngIf="isAdmin" routerLink="/adminDashboard"  class="navbar-title">
     <p id="title1">Health</p>
     <p id="title2">Care</p>
   </span>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppointmentService } from 'src/app/service/appointment.service';
 import { DoctorService } from 'src/app/service/doctor.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-user-dashboard',
@@ -62,8 +63,16 @@ export class UserDashboardComponent implements OnInit {
     this.appointmentService.bookAppointment(this.appointment).subscribe(
       data => {
         console.log(data);
-        alert("Appointment booked successfullt");
-        this.router.navigate(['/userAppointments']);
+        Swal.fire({
+          title: "Appointment booked successfully",
+          text: "Please wait for the doctor's approval",
+          icon: "success",
+          confirmButtonText: 'OK',
+      }).then((result) => {
+          if (result.isConfirmed) {
+            this.router.navigate(['/userAppointments']);
+          }
+      });
 
       },
       error => {

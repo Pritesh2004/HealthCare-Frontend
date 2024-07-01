@@ -1,6 +1,7 @@
 #welcome
 {
     height: 100vh;
+    overflow: hidden;
     background-image: url("https://themewagon.github.io/medicalcenter/assets/img/hero/h1_hero.png");
 }
 #welcomeTitle{
